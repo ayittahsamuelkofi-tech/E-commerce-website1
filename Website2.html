@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>Vandrid Ventures | Genuine & Aftermarket Car Spare Parts</title>
+    <meta name="description" content="Shop genuine and aftermarket spare parts for Toyota, Honda, Nissan, Mercedes and more. Fast delivery across Ghana." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="Website2-chalegighustle.css" />
+    <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+<!-- Accessibility: skip link -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Top notification bar -->
+<div class="topbar" role="status">
+    <div class="container">
+        <span>Vandrid Ventures — Genuine & Aftermarket Parts. Accra-wide delivery.</span>
+        <span class="topbar__cta">Call: +233 (0) 55 000 0000</span>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="header" aria-label="Site header">
+    <div class="container header__row">
+        <a class="brand" href="#/">
+            <img src="assets/logo.svg" alt="Vandrid Ventures" class="brand__logo" />
+            <span class="brand__name">Vandrid Ventures</span>
+        </a>
+
+        <div class="search">
+            <input id="searchInput" type="search" placeholder="Search parts, e.g. 'brake pads Toyota'" aria-label="Search products" />
+            <button id="searchBtn" class="btn btn--primary" aria-label="Search">Search</button>
+        </div>
+
+        <nav class="nav">
+            <button id="navToggle" class="icon-btn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <ul id="desktopNav" class="nav__list">
+                <li><a href="#/home" class="nav__link">Home</a></li>
+                <li><a href="#/catalog" class="nav__link">Shop</a></li>
+                <li><a href="#/about" class="nav__link">About</a></li>
+                <li><a href="#/contact" class="nav__link">Contact</a></li>
+            </ul>
+            <a href="#/cart" class="cart-link" aria-label="View cart">
+                <span class="cart-link__icon" aria-hidden="true">🛒</span>
+                <span id="cartCount" class="cart-link__count">0</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <div id="mobileNav" class="mobile-nav" hidden>
+        <ul>
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/catalog">Shop</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/contact">Contact</a></li>
+            <li><a href="#/cart">Cart</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Main -->
+<main id="main" tabindex="-1">
+    <!-- Home -->
+    <section id="home" class="view view--home">
+        <div class="hero container">
+            <div class="hero__content">
+                <h1>Find the right part, fast.</h1>
+                <p>Shop over 500 genuine and aftermarket parts for Toyota, Honda, Nissan, Mercedes, and more.</p>
+                <div class="hero__actions">
+                    <a href="#/catalog" class="btn btn--primary">Browse catalog</a>
+                    <a href="#/contact" class="btn btn--ghost">Talk to a specialist</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="spareparts-arranged.jpg" alt="Car parts neatly arranged" loading="lazy" />
+            </div>
+        </div>
+
+        <div class="container features">
+            <div class="feature">
+                <span class="feature__icon">✅</span>
+                <div>
+                    <h3>Genuine & Aftermarket</h3>
+                    <p>Reliable parts vetted by our technicians.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature__icon">🚚</span>
+                <div>
+                    <h3>Fast delivery in Accra</h3>
+                    <p>Same-day dispatch on in-stock items.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="feature__icon">🛡️</span>
+                <div>
+                    <h3>Warranty support</h3>
+                    <p>Purchase with confidence—support on valid claims.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container categories">
+            <h2>Shop by category</h2>
+            <div class="category-grid" id="categoryGrid">
+                <!-- populated by JS -->
+            </div>
+        </div>
+
+        <div class="container brands">
+            <h2>Top brands</h2>
+            <div class="brand-strip">
+                <span>Toyota</span><span>Honda</span><span>Nissan</span><span>Mercedes</span><span>Hyundai</span><span>Ford</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog -->
+    <section id="catalog" class="view view--catalog" hidden>
+        <div class="container catalog__layout">
+            <aside class="filters" aria-label="Filters">
+                <button class="filters__toggle icon-btn" id="filtersToggle" aria-expanded="false" aria-controls="filtersPanel">Filters</button>
+                <div id="filtersPanel" class="filters__panel">
+                    <div class="filter-group">
+                        <label class="filter-label" for="brandSelect">Brand</label>
+                        <select id="brandSelect">
+                            <option value="">All brands</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="categorySelect">Category</label>
+                        <select id="categorySelect">
+                            <option value="">All categories</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="modelInput">Model</label>
+                        <input id="modelInput" type="text" placeholder="e.g. Corolla, Civic" />
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="yearSelect">Year</label>
+                        <select id="yearSelect">
+                            <option value="">Any year</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label" for="sortSelect">Sort by</label>
+                        <select id="sortSelect">
+                            <option value="relevance">Relevance</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name-asc">Name A–Z</option>
+                        </select>
+                    </div>
+                    <button id="applyFilters" class="btn btn--primary btn--full">Apply filters</button>
+                    <button id="clearFilters" class="btn btn--ghost btn--full">Clear</button>
+                </div>
+            </aside>
+
+            <div class="catalog__content">
+                <div class="catalog__header">
+                    <h2 id="catalogTitle">All parts</h2>
+                    <p id="catalogCount" class="muted"></p>
+                </div>
+
+                <div id="productGrid" class="product-grid">
+                    <!-- populated by JS -->
+                </div>
+
+                <div id="pagination" class="pagination">
+                    <!-- populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product detail -->
+    <section id="product" class="view view--product" hidden>
+        <div class="container product__layout" id="productContainer">
+            <!-- populated by JS -->
+        </div>
+    </section>
+
+    <!-- Cart -->
+    <section id="cart" class="view view--cart" hidden>
+        <div class="container cart__layout">
+            <h2>Your cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart__summary">
+                <div class="cart__row"><span>Subtotal</span><strong id="cartSubtotal">GH₵0.00</strong></div>
+                <div class="cart__row"><span>Estimated delivery</span><span>GH₵20.00 (Accra)</span></div>
+                <div class="cart__row"><span>Total</span><strong id="cartTotal">GH₵0.00</strong></div>
+                <a href="#/checkout" class="btn btn--primary">Proceed to checkout</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout -->
+    <section id="checkout" class="view view--checkout" hidden>
+        <div class="container checkout__layout">
+            <h2>Checkout</h2>
+            <form id="checkoutForm" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full name</label>
+                        <input id="fullName" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="tel" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email (optional)</label>
+                        <input id="email" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery address</label>
+                        <input id="address" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City/Area</label>
+                        <input id="city" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Order notes (optional)</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="checkout__summary">
+                    <div id="checkoutItems"></div>
+                    <div class="cart__row"><span>Subtotal</span><strong id="checkoutSubtotal">GH₵0.00</strong></div>
+                    <div class="cart__row"><span>Delivery</span><strong id="checkoutDelivery">GH₵20.00</strong></div>
+                    <div class="cart__row cart__row--total"><span>Total</span><strong id="checkoutTotal">GH₵0.00</strong></div>
+                    <button type="submit" class="btn btn--primary btn--full">Place order</button>
+                    <p class="muted small">Payments can be coordinated via cash-on-delivery or mobile money. Secure gateway can be added later.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="view view--about" hidden>
+        <div class="container">
+            <h2>About Vandrid Ventures</h2>
+            <p>We’re a growing spare parts supplier based in Accra. We stock genuine and aftermarket parts for popular brands and models. Our mission is fast, reliable service with honest pricing.</p>
+            <div class="info-grid">
+                <div><strong>Location:</strong> Accra, Ghana</div>
+                <div><strong>Hours:</strong> Mon–Sat, 8:00–18:00</div>
+                <div><strong>Phone:</strong> +233 (0) 55 000 0000</div>
+                <div><strong>Email:</strong> sales@vandridventures.com</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="view view--contact" hidden>
+        <div class="container">
+            <h2>Contact us</h2>
+            <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="cName">Name</label>
+                        <input id="cName" type="text" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cPhone">Phone</label>
+                        <input id="cPhone" type="tel" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="cMessage">Message</label>
+                        <textarea id="cMessage" rows="4" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--primary">Send message</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer__grid">
+        <div>
+            <strong>Vandrid Ventures</strong>
+            <p class="muted">Accra’s trusted source for genuine & aftermarket car parts.</p>
+        </div>
+        <div>
+            <strong>Quick links</strong>
+            <ul class="footer__links">
+                <li><a href="#/catalog">Shop</a></li>
+                <li><a href="#/about">About</a></li>
+                <li><a href="#/contact">Contact</a></li>
+                <li><a href="#/cart">Cart</a></li>
+            </ul>
+        </div>
+        <div>
+            <strong>Support</strong>
+            <ul class="footer__links">
+                <li><a href="#">Returns & warranty</a></li>
+                <li><a href="#">Delivery info</a></li>
+                <li><a href="#">Privacy & terms</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer__bottom">
+        <span>© <span id="year"></span> Vandrid Ventures. All rights reserved.</span>
+    </div>
+</footer>
+
+<script src="website2-chalegighustle-data-js.js"></script>
+<script src="Website2-chalegighustle.js"></script>
+</body>
+</html>
